@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    ios:Page.UseSafeArea="true"
+             x:Class="SplashyApp.Views.AboutUS.AboutUSPage">
+    
+    
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <!--<Frame Margin="2" HasShadow="true">-->
+            <Label  Text="All devices" VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"/>
+            <!--</Frame>-->
+
+            <!--ItemTapped="DevicesList_ItemTapped" ItemSelected="phonesList_ItemSelected"-->
+            <Frame OutlineColor="Black"  Margin="10,10,10,10" >
+                <ListView x:Name="DevicesList" ItemSelected="phonesList_ItemSelected"    ItemsSource="{Binding }" >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <ContentView Padding="10" BackgroundColor="{Binding BackgroundColor}">
+
+                                        <Label Text="{Binding MyDeviceString}" HorizontalOptions="Center" TextColor="Black" />
+
+                                    </ContentView>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </Frame>
+
+
+           
+            <!--<Label  Text="All devices2" VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"/>-->
+            <!--</Frame>-->
+            <!--<ListView x:Name="DevicesList1"  GroupShortNameBinding="{Binding MyDeviceString}" SeparatorVisibility="Default" GroupDisplayBinding="{Binding MyDeviceString}" ItemsSource="{Binding MyTemp}"   >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding MyDeviceString}"
+                     Detail="{Binding MyDeviceString}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
+           
+            <!--<ListView ItemsSource="{Binding }" ></ListView>-->
+            
+
+            <Frame OutlineColor="Black"  Margin="10,10,10,10" >
+                <StackLayout  Orientation="Horizontal" VerticalOptions="Start"  >
+                    <Button x:Name="Add" Text="Add" Clicked="AddDevice" WidthRequest="70"></Button>
+                    <Button x:Name="Delete" Text="Delete" Clicked="Delete_Devicce"  WidthRequest="80" FontSize="14"></Button>
+                    <Button x:Name="Edit" Text="Edit" Clicked="EditDevice"  WidthRequest="70"></Button>
+                    <Button x:Name="Info" Text="Info" Clicked="InfoDevice"  WidthRequest="70"></Button>
+
+
+                </StackLayout>
+            </Frame>
+
+            <Frame OutlineColor="Black"  Margin="10,10,10,10" >
+                <StackLayout Orientation="Horizontal">
+                    <Picker x:Name="SendMessagePicker"  WidthRequest="200" Title="Selected command" ></Picker>
+
+                    <!--<Entry x:Name="SendMessage" WidthRequest="200"  Placeholder = "Enter Message"  HorizontalOptions = "Start"></Entry>-->
+                    <Button x:Name="Send" Text="Send" Clicked="SendDevice"></Button>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

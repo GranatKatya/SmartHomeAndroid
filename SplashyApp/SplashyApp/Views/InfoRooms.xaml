@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SplashyApp.ViewModel.InfoRooms">
+    <ContentPage.Content  ItemsSource="{Binding  AddRoomPageViewModel}">
+        <Frame OutlineColor="Black"  Margin="10,10,10,10" >
+            <StackLayout Orientation="Vertical" >
+                <Label Text="Name" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Entry  x:Name="Name"  IsEnabled="false" HorizontalTextAlignment="Center"   Text="{Binding Name}"></Entry>
+
+                <Label Text="Count" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Entry  x:Name="Pin"  IsEnabled="false" HorizontalTextAlignment="Center"  Text="{Binding Count}"></Entry>
+
+                <Label Text="Type" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Entry  x:Name="Type"  IsEnabled="false" HorizontalTextAlignment="Center"  Text="{Binding Type}"></Entry>
+
+
+                <Label Text="Id" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Entry  x:Name="Id"  IsEnabled="false" HorizontalTextAlignment="Center"  Text="{Binding Key}"></Entry>
+
+
+                <Label  Text="All devices" VerticalOptions="Start"  HorizontalOptions="CenterAndExpand"/>
+                <Frame OutlineColor="Black"  Margin="2,2,2,2" >
+                    <ListView x:Name="DevicesList"    ItemsSource="{Binding }" >
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <ContentView Padding="10" BackgroundColor="{Binding BackgroundColor}">
+
+                                            <Label Text="{Binding MyDeviceString}" HorizontalOptions="Center" TextColor="Black" />
+
+                                        </ContentView>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                </Frame>
+
+
+                <Button Text="Ok" Clicked="Back"></Button>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SplashyApp.Views.Rooms.RoomsPage">
+
+
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <!--<Frame Margin="2" HasShadow="true">-->
+            <Label  Text="All rooms" VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"/>
+            <!--</Frame>-->
+            
+
+            <!--ItemTapped="DevicesList_ItemTapped" ItemSelected="phonesList_ItemSelected"-->
+            <Frame OutlineColor="Black"  Margin="10,10,10,10" >
+                <ListView x:Name="DevicesList" ItemSelected="phonesList_ItemSelected"    ItemsSource="{Binding }" >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <ContentView Padding="10" BackgroundColor="{Binding BackgroundColor}">
+
+                                        <Label Text="{Binding MyRoomString}" HorizontalOptions="Center" TextColor="Black" />
+
+                                    </ContentView>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </Frame>
+
+
+
+
+
+            <Frame OutlineColor="Black"  Margin="10,10,10,10" >
+                <StackLayout  Orientation="Horizontal" VerticalOptions="Start"  >
+                    <Button x:Name="Add" Text="Add" Clicked="AddRoom" WidthRequest="70"></Button>
+                    <Button x:Name="Delete" Text="Delete" Clicked="DeleteRoom"  WidthRequest="80" FontSize="14"></Button>
+                    <Button x:Name="Edit" Text="Edit" Clicked="EditRoom"  WidthRequest="70"></Button>
+                    <Button x:Name="Info" Text="Info" Clicked="InfoRoom"  WidthRequest="70"></Button>
+
+
+                </StackLayout>
+            </Frame>
+
+         
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

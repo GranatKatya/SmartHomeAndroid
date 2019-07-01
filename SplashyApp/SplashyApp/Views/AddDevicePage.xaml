@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+              xmlns:viewModel  ="clr-namespace:SplashyApp.Views.AboutUS"  
+             
+              xmlns:local="clr-namespace:CustomRendererApp;assembly=CustomRendererApp"
+             
+             x:Class="SplashyApp.Views.AddDevicePage">
+
+
+
+    <!--<ContentPage.BindingContext>
+        <viewModel:AboutUSPage />
+    </ContentPage.BindingContext>-->
+
+
+
+    <!--ItemsSource="{Binding  AddDevicePageViewModel}"-->
+    <ContentPage.Content  ItemsSource="{Binding  AddDevicePageViewModel}">
+        <StackLayout Orientation="Vertical" >
+            <Label Text="Name" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry  x:Name="Name" HorizontalTextAlignment="Center"   Text="{Binding Name}"></Entry>
+
+            <Label Text="Pin" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry  x:Name="Pin"  HorizontalTextAlignment="Center"  Text="{Binding Pin}"></Entry>
+
+            <Label Text="Device type" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Picker x:Name="DeviceTypePicker"    Title="Selected device type"
+            SelectedIndexChanged="SelectedIndexChanged"></Picker>
+
+            <!--<Label Text="ConfirmPass" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry  x:Name="ConfirmPass" Text="{Binding Password}"></Entry>-->
+
+            <!--<Button Text="Ok"  Command="{Binding  LoginCommand}"></Button>-->
+
+            <Button  x:Name="ADDBUTTON" Text="Ok" Clicked="Add"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

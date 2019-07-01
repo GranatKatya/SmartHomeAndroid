@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:local="clr-namespace:SplashyApp;assembly=SplashyApp"
+             xmlns:l ="SplashyApp.Views.PersonDataTemplateSelector"
+             x:Class="SplashyApp.Views.GamePage">
+
+	
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="lampTemplate">
+                <ViewCell>
+
+
+
+                    <ViewCell.View>
+                        <ContentView Padding="10" BackgroundColor="{Binding BackgroundColor}">
+                            <StackLayout HorizontalOptions="Center">
+                                <Label Text="{Binding MyDeviceString}" HorizontalOptions="Center" TextColor="Black" />
+                                <!--<Button Grid.Column="4"  Text="&#xF00D;" ></Button>-->
+                                <Grid Margin="10,10,0,0" HorizontalOptions="Center"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="40"/>
+
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="1" Text= "{Binding Status}" TextColor="Black"  />
+                                    <Switch  Toggled="Switch_Toggled" Grid.Row="0" Grid.Column="2" ScaleX="1.3" ScaleY="1.3" IsToggled="{Binding Switch}" ></Switch>
+                                   
+                                </Grid>
+                            </StackLayout>
+
+                        </ContentView>
+                    </ViewCell.View>
+
+
+
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="invalidPersonTemplate">
+                <ViewCell>
+
+
+
+
+                    <ViewCell.View>
+                        <ContentView Padding="10" BackgroundColor="{Binding BackgroundColor}">
+                            <StackLayout>
+                                <Label Text="{Binding MyDeviceString}" HorizontalOptions="Center" TextColor="Red" />
+                                <Button Grid.Column="4"  BackgroundColor="Aqua" ></Button>
+                            </StackLayout>
+
+                        </ContentView>
+                    </ViewCell.View>
+
+                
+                
+                </ViewCell>
+            </DataTemplate>
+            <!--<DataTemplate x:Key="lampTemplate">
+                <ViewCell>
+
+
+
+                    <ViewCell.View>
+                        <ContentView Padding="10" BackgroundColor="{Binding BackgroundColor}">
+                            <StackLayout>
+                                
+                                <Label Text="{Binding MyDeviceString}" HorizontalOptions="Center" TextColor="Black" />
+                                <Button Grid.Column="4"  Text="&#xF00D;" ></Button>
+                            </StackLayout>
+
+                        </ContentView>
+                    </ViewCell.View>
+
+
+
+                </ViewCell>
+            </DataTemplate>-->
+            <local:PersonDataTemplateSelector x:Key="personDataTemplateSelector"
+                lampTemplate="{StaticResource lampTemplate}"
+                InvalidTemplate="{StaticResource invalidPersonTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    
+    <ContentPage.Content>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <!--<Frame Margin="2" HasShadow="true">-->
+                <Label  Text="All devices" VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand"/>
+                <!--</Frame>-->
+            
+            <!--</Frame>-->
+            <!--ItemTapped="DevicesList_ItemTapped" ItemSelected="phonesList_ItemSelected"-->
+
+          
+            <!--ItemTemplate="{StaticResource personDataTemplateSelector}"-->
+            <Frame OutlineColor="Black"  Margin="10,10,10,10"  WidthRequest="290" HeightRequest="400">
+                <ListView x:Name="DevicesList" Margin="1,1,1,1"  WidthRequest="200" HeightRequest="200"  ItemsSource="{Binding }" RowHeight="200" ItemTemplate="{StaticResource personDataTemplateSelector}" >
+
+
+                    <!--<ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <ContentView Padding="10" BackgroundColor="{Binding BackgroundColor}">
+                                        <StackLayout>
+                                            <Label Text="{Binding MyDeviceString}" HorizontalOptions="Center" TextColor="Black" />
+                                            <Button Grid.Column="4"  Text="&#xF00D;" ></Button>
+                                        </StackLayout>
+
+                                    </ContentView>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>-->
+                        
+                        
+                    <!--<ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <ContentView Padding="10" BackgroundColor="{Binding BackgroundColor}">
+                                        <StackLayout>
+                                            <Label Text="{Binding MyRoomString}" HorizontalOptions="Center" TextColor="Black" />
+                                        <Button Grid.Column="4" Command="{Binding DeleteEintragCommand}" Text="&#xF00D;" FontFamily="../Ressources/fontawesome.ttf#FontAwesome"></Button>
+                                        </StackLayout>
+
+                                    </ContentView>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>-->
+                        <!--</ListView.ItemTemplate>-->
+
+                        
+                    </ListView>
+                </Frame>
+                
+
+
+            
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

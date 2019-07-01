@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            
+            
+            xmlns:views="clr-namespace:SplashyApp.Views"  
+              Title = "Home Page"  
+            
+            
+             x:Class="SplashyApp.Views.HomeTabbedPage">
+    <!--<TabbedPage.Children>
+
+      
+
+            <views:GamePage/>
+         
+        <views:MoviePage/>
+    </TabbedPage.Children>-->
+   
+
+
+    <!--<TabbedPage.Children>-->
+        <!--<NavigationPage Title="Games" Icon="games">
+            <x:Arguments>
+                <views:GamePage/>
+            </x:Arguments>
+        </NavigationPage>-->
+        
+        
+        <!--<NavigationPage Title="Movies" Icon="camera">
+            <x:Arguments>
+                <views:MoviePage/>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Movies" Icon="camera">
+            <x:Arguments>
+                <views:CreateSchedule/>
+            </x:Arguments>
+        </NavigationPage>-->
+        
+        
+        
+        
+        
+        
+        
+
+
+        <!--<NavigationPage Title="Movies" Icon="camera">
+            <x:Arguments>
+                <views:MoviePage/>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Movies" Icon="camera">
+            <x:Arguments>
+                <views:MoviePage/>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Movies" Icon="camera">
+            <x:Arguments>
+                <views:MoviePage/>
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Movies" Icon="camera">
+            <x:Arguments>
+                <views:MoviePage/>
+            </x:Arguments>
+        </NavigationPage>-->
+    <!--</TabbedPage.Children>-->
+
+</TabbedPage>

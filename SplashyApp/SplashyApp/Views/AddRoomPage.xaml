@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SplashyApp.Views.AddRoomPage">
+    
+    
+    <ContentPage.Content  ItemsSource="{Binding  AddDevicePageViewModel}">
+        <StackLayout Orientation="Vertical" >
+
+
+            <Frame OutlineColor="Black"  Margin="10,2,10,2" >
+                <StackLayout>
+
+                    <Label Text="Name" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                    <Entry  x:Name="Name" HorizontalTextAlignment="Center"   Text="{Binding Name}"></Entry>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Count"  WidthRequest="40" HeightRequest="20"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                        <Entry  x:Name="Count"  HorizontalTextAlignment="Center"  HeightRequest="20"  WidthRequest="50"  Text="{Binding Count}"></Entry>
+
+                        <Label Text="Device type"  HeightRequest="20"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                        <Picker x:Name="RoomTypePicker"     Title="Selected device type" WidthRequest="90"
+            SelectedIndexChanged="SelectedIndexChanged"></Picker>
+                    </StackLayout>
+
+
+
+
+                    <Frame OutlineColor="Black"  Margin="1,1,1,1" >
+                        <StackLayout Orientation="Vertical">
+
+                            <Label Text="Select device" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                            <Picker x:Name="DevicePicker"  Title="Selected device"  WidthRequest="230"   HorizontalOptions="CenterAndExpand"
+            SelectedIndexChanged="SelectedDevChanged"></Picker>
+
+                            <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+                                <Button x:Name="AddDeviceButton"  Text="Add Device" Clicked="AddDevice" WidthRequest="120" ></Button>
+                                <Button x:Name="DeleteDeviceButton"  Text="Delete Device" Clicked="DeleteDevice" WidthRequest="120" ></Button>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Frame>
+
+                </StackLayout>
+            </Frame>
+
+
+
+
+
+
+
+
+
+
+
+            <Frame OutlineColor="Black"  Margin="10,2,10,0" >
+                <StackLayout HeightRequest="100">
+                    <Label Text="All devices in room"  VerticalOptions="Start"  HorizontalOptions="CenterAndExpand" />
+
+                    <ListView x:Name="DevicesList" ItemSelected="phonesList_ItemSelected"    ItemsSource="{Binding  }" >
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <ContentView Padding="10" BackgroundColor="{Binding BackgroundColor}">
+
+                                            <Label Text="{Binding MyDeviceString}" HorizontalOptions="Center" TextColor="Black" />
+
+                                        </ContentView>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+
+                </StackLayout>
+            </Frame>
+
+
+
+
+
+
+
+            <Frame OutlineColor="Black"   Margin="10,0,10,2"  HeightRequest="40" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"   HeightRequest="40">
+
+                    <Button x:Name="addbutton"  Text="Confirm" Clicked="Add" WidthRequest="100"    HeightRequest="30"></Button>
+                    <Button x:Name="info"  Text="Info" Clicked="Info" WidthRequest="100"    HeightRequest="30"></Button>
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

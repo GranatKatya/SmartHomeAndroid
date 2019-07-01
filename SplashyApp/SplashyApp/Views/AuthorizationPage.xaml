@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:viewModel  ="clr-namespace:SplashyApp.ViewModel"  
+             x:Class="SplashyApp.Views.AuthorizationPage">
+
+
+    <ContentPage.BindingContext>
+        <viewModel:LoginViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Login" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry  x:Name="Login" Text="{Binding UserName}"></Entry>
+
+            <Label Text="Password" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry  x:Name="Password"  Text="{Binding Password}"></Entry>
+
+            <Label Text="ConfirmPass" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry  x:Name="ConfirmPass" Text="{Binding Password}"></Entry>
+
+            <!--<Button Text="Ok"  Command="{Binding  LoginCommand}"></Button>-->
+
+            <Button Text="Ok" Clicked="Button_Clicked"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
